@@ -26,7 +26,7 @@ crazy_operation= function(key, constant) {
 	for (x = 0, i = 0, k = -7, larr = arr.length; x < larr; x++) {
 		k1 = ((i + 1) & (larr - 1));
 		l1 = constant * arr[k1] + k;
-		k = parseInt((l1 / 4294967296).toString()) & 0xFF;
+		k = parseInt(l1 / 4294967296) & 0xFF;
 		i2 = l1 + k;
 
 		if (i2 < k) {
@@ -79,15 +79,19 @@ brute_force = function() {
 		if (is_profile_auth_key(auth_key_plaintext))
 		{
 			console.log("CORRECT: " + hex_string);
-			document.getElementById("reverse").innerHTML = "Android ID: " + hex_string;
+			showString("Android ID: " + hex_string);
 			i = 0x666666;
 		}
 		//console.log("Can not find correct Android ID!");
 		if (i == 0xFFFF) {
-			document.getElementById("reverse").innerHTML = "Can not find correct Android ID!";
+			showString("Can not find correct Android ID!");
 		}
 	}
 };
+
+showString = function(str) {
+	document.getElementById("reverse").innerHTML = str;
+}
 
 dbFileElm.onchange = function() {
 	var f = dbFileElm.files[0];
@@ -102,7 +106,8 @@ dbFileElm.onchange = function() {
 		}
 		catch(err) {
 			auth_key_value = null;
-			console.log(err.message);
+			showString(err.message);
+			//console.log(err.message);
 		}
 		console.log(auth_key_value);
 		if (auth_key_value != null)
@@ -113,5 +118,3 @@ dbFileElm.onchange = function() {
 	}
 	r.readAsArrayBuffer(f);
 }
-
-//console.log(java_string_hash("0123456789abcdef"));
