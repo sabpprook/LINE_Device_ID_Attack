@@ -5,9 +5,10 @@ var id_value = null;
 var region_value = null;
 var phone_value = null;
 
-dbFileElm.onchange = () => {
+dbFileElm.onchange = async () => {
     var f = dbFileElm.files[0];
     var r = new FileReader();
+    showString("Processing...<br><br>");
     r.onload = async () => {
         var arr = new Uint8Array(r.result);
         var db = new SQL.Database(arr);
@@ -51,7 +52,7 @@ get_setting = (db, key) => {
     }
 }
 
-brute_force = () => {
+brute_force = async () => {
     var count = 0;
 
     for (var i = 0; i <= 0x1000; i++) {
