@@ -2,31 +2,37 @@
 
 <html>
 <head>
-    <meta charset="utf8">
+    <meta charset="UTF-8">
     <title>Line Android ID Brute-force Reverse</title>
-    <script type="text/javascript" src='sql.js'></script>
-    <script type="text/javascript" src="base64.js"></script>
-    <script type="text/javascript" src="aes.js"></script>
-    <script type="text/javascript" src="encoding-indexes.js"></script>
-    <script type="text/javascript" src="encoding.js"></script>
+    <script src="scripts/sql.js"></script>
+    <script src="scripts/base64.js"></script>
+    <script src="scripts/aes.js"></script>
+    <script src="scripts/encoding-indexes.js"></script>
+    <script src="scripts/encoding.js"></script>
+    <style type="text/css">
+        .main { font-family: monospace; font-size:12pt; min-height: calc(100vh - 100px); }
+        .footer { font-family: monospace; font-size:10pt; font-style:italic; height: 20px; }
+    </style>
 </head>
 
-<body>
+<body background="pictures/bg.png">
 
-<main>
+<main class="main">
     <label>Load [naver_line] file:</label>
-    <input type="file" id="db_file" />
-    <p>
+    <input type="file" id="db_file" /><p>
     <div id="log">
-    Please extract 'naver_line' from phone storage at /data/data/jp.naver.line.android/database
-    <br><br>
-    <img src="1.png" />
+    Please extract 'naver_line' from phone storage under /data/data/jp.naver.line.android/database<br><br>
+    <img src="pictures/1.png" />
     </div>
 </main>
 
-<footer>
-    
+<footer class="footer">
+    LINE protocal Reverse-Engineering. (<a href="http://altrepo.eu/git/line-protocol">view-android-settings.py</a>)<br>
+    SQLite database for javascript. (<a href="https://github.com/kripken/sql.js">sql.js</a>)<br>
+    Base64 (UTF-8) for javascript. (<a href="https://github.com/dankogai/js-base64">base64.js</a>)<br>
+    AES Crypto for javascript. (<a href="https://github.com/ricmoo/aes-js">aes.js</a>)<br>
+    Byte array to UTF-8 string. (<a href="https://github.com/inexorabletash/text-encoding">encoding.js, encoding-indexes.js</a>)<br>
 </footer>
-<script src='main.js'></script>
+<script src='scripts/main.js'></script>
 </body>
 </html>
