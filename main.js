@@ -19,10 +19,10 @@ dbFileElm.onchange = async () => {
         region_value = get_setting(db, "PROFILE_REGION");
         phone_value = get_setting(db, "PROFILE_NORMALIZED_PHONE");
 
-        console.log("PROFILE_AUTH_KEY: " + auth_key_value);
-        console.log("PROFILE_NAME: " + name_value);
-        console.log("PROFILE_ID: " + id_value);
-        console.log("PROFILE_REGION: " + region_value);
+        console.log("PROFILE_AUTH_KEY:         " + auth_key_value);
+        console.log("PROFILE_NAME:             " + name_value);
+        console.log("PROFILE_ID:               " + id_value);
+        console.log("PROFILE_REGION:           " + region_value);
         console.log("PROFILE_NORMALIZED_PHONE: " + phone_value);
         
         if (auth_key_value != null)
@@ -161,12 +161,12 @@ showAllKey = (key) => {
     var region = decrypt_setting(region_value, key);
     var phone = decrypt_setting(phone_value, key);
 
-    appendString("User MID: " + mid + "<br>");
-    appendString("Auth key: " + auth_key + "<br>");
-    appendString("Name:     " + name + "<br>");
-    appendString("LINE ID:  " + id + "<br>");
-    appendString("Region:   " + region + "<br>");
-    appendString("Phone:    " + phone + "<br><br>");
+    appendString("User MID:&nbsp;" + mid + "<br>");
+    appendString("Auth key:&nbsp;" + auth_key + "<br>");
+    appendString("Name:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;" + name + "<br>");
+    appendString("LINE ID:&nbsp;&nbsp;" + id + "<br>");
+    appendString("Region:&nbsp;&nbsp;&nbsp;" + region + "<br>");
+    appendString("Phone:&nbsp;&nbsp;&nbsp;&nbsp;" + phone + "<br><br>");
 
     console.log("User MID: " + mid);
     console.log("Auth key: " + auth_key);
